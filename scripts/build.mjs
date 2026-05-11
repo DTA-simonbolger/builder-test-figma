@@ -1,4 +1,4 @@
-import { copyFileSync, cpSync, existsSync, mkdirSync, rmSync } from "node:fs";
+import { copyFileSync, cpSync, existsSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { basename, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { validateSite } from "./validate.mjs";
@@ -47,6 +47,7 @@ for (const file of files) {
 }
 
 cpSync(join(root, "assets"), join(outDir, "assets"), { recursive: true });
+writeFileSync(join(outDir, ".assetsignore"), "_headers\n_redirects\n", "utf8");
 
 validateSite(outDir);
-console.log("Built Cloudflare Pages output in dist/.");
+console.log("Built Cloudflare deploy output in dist/.");

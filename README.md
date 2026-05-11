@@ -4,16 +4,18 @@ Static draft website generated from Figma CSS exports.
 
 ## Cloudflare Pages deployment
 
-This repository is prepared for Cloudflare Pages Git deployments.
+This repository is prepared for Cloudflare Git deployments using either Pages or Workers static assets.
 
 Use these Cloudflare Pages build settings:
 
 - Framework preset: `None`
-- Build command: `npm run build`
+- Build command: `npm run build:cf`
 - Build output directory: `dist`
 - Root directory: repository root
 
 The build is dependency-free. It copies only the production site files into `dist/`, excluding the preserved `*.figma-export.css` source dumps.
+
+If the project is configured as a Cloudflare Worker, `wrangler.toml` also declares `[assets] directory = "./dist"` so `wrangler deploy` can upload the static site without a Worker script.
 
 Useful local commands:
 
