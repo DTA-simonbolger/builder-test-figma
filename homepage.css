@@ -737,15 +737,6 @@ textarea {
     linear-gradient(110deg, #071948 0%, #0b225f 43%, #17368d 100%);
 }
 
-.control-cta::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.18;
-  background: url("assets/ready-to-bring-control.png") center / cover no-repeat;
-  mix-blend-mode: screen;
-}
-
 .control-cta-grid {
   position: relative;
   z-index: 1;
@@ -1026,11 +1017,15 @@ textarea {
 }
 
 .process-item:nth-child(2) .process-visual {
-  background: url("assets/p3.png") center / cover no-repeat;
+  background: url("assets/scalability.png") center / cover no-repeat;
 }
 
 .process-item:nth-child(3) .process-visual {
-  background: url("assets/scalability.png") center / cover no-repeat;
+  background: url("assets/continuity.png") center / cover no-repeat;
+}
+
+.process-item:nth-child(4) .process-visual {
+  background: url("assets/automation.png") center / cover no-repeat;
 }
 
 .expertise-card:nth-child(1) .card-art {
@@ -1038,13 +1033,12 @@ textarea {
 }
 
 .expertise-card:nth-child(2) .card-art {
-  background: url("assets/continuity.png") center / cover no-repeat;
+  background: url("assets/p3.png") center / cover no-repeat;
 }
 
 .expertise-card:nth-child(3) .card-art {
-  background: url("assets/automation.png") center / cover no-repeat;
+  background: url("assets/maad.png") center / cover no-repeat;
 }
-
 .team-strip {
   background: url("assets/team.png") center / cover no-repeat;
 }
