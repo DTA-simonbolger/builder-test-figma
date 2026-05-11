@@ -1,0 +1,21 @@
+# Clean URL rewrites for Cloudflare Pages.
+# Existing .html URLs remain valid.
+
+/services /services.html 200
+/services/ /services.html 200
+/services/government-approvals /services-b.html 200
+/services/government-approvals/ /services-b.html 200
+/about /about.html 200
+/about/ /about.html 200
+/team /team.html 200
+/team/ /team.html 200
+/insights /insights.html 200
+/insights/ /insights.html 200
+/insights/aml-ctf-operating-model-uplift /insights-b.html 200
+/insights/aml-ctf-operating-model-uplift/ /insights-b.html 200
+/careers /careers.html 200
+/careers/ /careers.html 200
+/careers/governance-risk-advisor /careers-b.html 200
+/careers/governance-risk-advisor/ /careers-b.html 200
+/contact /contact.html 200
+/contact/ /contact.html 200

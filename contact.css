@@ -1,0 +1,320 @@
+.contact-page {
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.contact-hero {
+  position: relative;
+  padding: clamp(82px, 10vw, 128px) 0;
+  overflow: hidden;
+}
+
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.44;
+  background:
+    radial-gradient(circle at 88% 16%, rgba(233, 178, 109, 0.2), transparent 34%),
+    linear-gradient(120deg, rgba(64, 152, 249, 0.14), transparent 44%),
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: auto, auto, 72px 72px, 72px 72px;
+}
+
+.contact-hero-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 548px);
+  gap: clamp(40px, 7vw, 72px);
+  align-items: center;
+}
+
+.contact-intro h1 {
+  margin: 0 0 22px;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.contact-intro .lead {
+  max-width: 680px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.contact-facts {
+  display: grid;
+  gap: 18px;
+  max-width: 560px;
+  margin-top: 48px;
+}
+
+.contact-fact {
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.contact-fact strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--gold);
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.contact-fact span {
+  color: var(--paper);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.contact-form-panel {
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  background: rgba(33, 34, 44, 0.72);
+}
+
+.contact-form {
+  display: grid;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field label,
+.consent {
+  color: var(--paper);
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.4px;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid #626475;
+  border-radius: 0;
+  color: var(--paper);
+  background: var(--ink);
+  padding: 12px 16px;
+  outline: none;
+}
+
+.field textarea {
+  min-height: 132px;
+  resize: vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--gold);
+}
+
+.consent {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: var(--muted);
+  font-family: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.consent input {
+  margin-top: 3px;
+}
+
+.contact-form .button-primary {
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+}
+
+.contact-methods {
+  padding: clamp(78px, 10vw, 116px) 0;
+  background: var(--ink-2);
+}
+
+.contact-methods-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 612px) minmax(0, 1fr);
+  gap: clamp(42px, 7vw, 76px);
+  align-items: stretch;
+}
+
+.contact-image {
+  min-height: 560px;
+  border-radius: 20px;
+  background:
+    linear-gradient(145deg, rgba(233, 178, 109, 0.28), transparent 38%),
+    linear-gradient(315deg, rgba(64, 152, 249, 0.3), transparent 42%),
+    #252733;
+}
+
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.method-card {
+  display: grid;
+  align-content: center;
+  min-height: 260px;
+  padding: 24px;
+  background: var(--ink);
+}
+
+.method-icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 36px;
+  color: var(--gold);
+  background: var(--ink-2);
+  font-weight: 700;
+}
+
+.method-card h2 {
+  margin: 0 0 8px;
+  color: var(--paper);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.method-card p {
+  margin: 0 0 18px;
+  color: var(--gold);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.method-card a,
+.method-card span {
+  color: var(--paper);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.method-card a:hover,
+.method-card a:focus-visible {
+  color: var(--blue);
+}
+
+.map-section {
+  padding: clamp(72px, 9vw, 112px) 0;
+  background: var(--ink);
+}
+
+.map-panel {
+  position: relative;
+  min-height: 440px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    #21222c;
+  background-size: 54px 54px;
+}
+
+.map-pin {
+  display: grid;
+  gap: 8px;
+  place-items: center;
+  color: var(--paper);
+  text-align: center;
+}
+
+.map-pin::before {
+  content: "";
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  background: var(--gold);
+  box-shadow: 0 0 0 18px rgba(233, 178, 109, 0.14);
+}
+
+.map-pin strong {
+  color: var(--gold);
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1080px) {
+  .contact-hero-grid,
+  .contact-methods-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-image {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 680px) {
+  .form-row,
+  .method-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-panel {
+    padding: 20px;
+  }
+
+  .method-card {
+    min-height: 220px;
+  }
+}
+
+/* Asset placement from Figma mockups */
+.contact-image {
+  background: url("assets/contact.png") center / cover no-repeat;
+}
+
+.map-panel {
+  background: url("assets/locstat.png") center / cover no-repeat;
+}
+
+.map-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(23, 24, 32, 0.12);
+  pointer-events: none;
+}
+
+.map-pin {
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,344 @@
+.article-page {
+  color: var(--ink);
+  background: var(--paper-2);
+}
+
+.article-hero {
+  position: relative;
+  padding: clamp(82px, 11vw, 138px) 0 clamp(70px, 9vw, 112px);
+  color: var(--paper);
+  background: var(--ink);
+  overflow: hidden;
+}
+
+.article-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.45;
+  background:
+    radial-gradient(circle at 84% 18%, rgba(233, 178, 109, 0.2), transparent 34%),
+    linear-gradient(120deg, rgba(64, 152, 249, 0.14), transparent 44%),
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: auto, auto, 72px 72px, 72px 72px;
+}
+
+.article-hero-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 860px) minmax(240px, 340px);
+  gap: clamp(42px, 7vw, 92px);
+  align-items: end;
+}
+
+.article-hero h1 {
+  margin: 0 0 20px;
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.article-hero .lead {
+  max-width: 760px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.author-card {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.author-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(233, 178, 109, 0.44);
+  border-radius: 999px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.author-row strong {
+  display: block;
+  color: var(--paper);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.author-row span,
+.author-card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.article-main {
+  padding: clamp(60px, 8vw, 96px) 0 clamp(96px, 12vw, 144px);
+  background: var(--paper-2);
+}
+
+.article-feature {
+  min-height: clamp(300px, 42vw, 540px);
+  margin-bottom: clamp(52px, 8vw, 84px);
+  border-radius: 20px;
+  background:
+    linear-gradient(145deg, rgba(233, 178, 109, 0.34), transparent 38%),
+    linear-gradient(315deg, rgba(64, 152, 249, 0.28), transparent 42%),
+    #252733;
+  position: relative;
+  overflow: hidden;
+}
+
+.article-feature::before {
+  content: "";
+  position: absolute;
+  inset: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.article-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 840px) minmax(240px, 320px);
+  gap: clamp(44px, 7vw, 92px);
+  align-items: start;
+}
+
+.article-content {
+  display: grid;
+  gap: clamp(36px, 5vw, 62px);
+}
+
+.article-section {
+  display: grid;
+  gap: 18px;
+}
+
+.article-section h2 {
+  margin: 0;
+  color: var(--gold);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.article-section h3 {
+  margin: 0;
+  color: var(--muted-dark);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.article-section p {
+  margin: 0;
+  color: #626475;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.article-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 22px;
+  color: #626475;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.article-callout {
+  padding: 24px 28px;
+  border-left: 3px solid var(--gold);
+  color: #626475;
+  background: var(--paper);
+}
+
+.article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line-light);
+}
+
+.article-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: 8px;
+  color: var(--muted-dark);
+  background: #e7e8e8;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.article-sidebar {
+  position: sticky;
+  top: 126px;
+  display: grid;
+  gap: 18px;
+}
+
+.sidebar-panel {
+  padding: 24px;
+  border: 1px solid var(--line-light);
+  border-radius: 12px;
+  background: var(--paper);
+}
+
+.sidebar-panel h2,
+.sidebar-panel h3 {
+  margin: 0 0 16px;
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.sidebar-panel p,
+.sidebar-panel a {
+  margin: 0;
+  color: var(--muted-dark);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.sidebar-panel a:hover,
+.sidebar-panel a:focus-visible {
+  color: var(--blue);
+}
+
+.further-insights {
+  margin-top: clamp(76px, 10vw, 118px);
+}
+
+.further-insights h2 {
+  margin: 0 0 28px;
+  color: var(--ink);
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.further-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.further-card {
+  overflow: hidden;
+  border: 1px solid var(--line-light);
+  border-radius: 20px;
+  background: var(--paper);
+}
+
+.further-art {
+  min-height: 200px;
+  background:
+    linear-gradient(145deg, rgba(233, 178, 109, 0.32), transparent 38%),
+    linear-gradient(315deg, rgba(64, 152, 249, 0.26), transparent 42%),
+    #252733;
+}
+
+.further-copy {
+  display: grid;
+  gap: 8px;
+  padding: 20px;
+}
+
+.further-copy span {
+  color: var(--gold);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.further-copy h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.further-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+@media (max-width: 1080px) {
+  .article-hero-grid,
+  .article-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .article-sidebar {
+    position: static;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .further-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .article-hero {
+    padding-top: 68px;
+  }
+
+  .article-sidebar,
+  .further-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-callout {
+    padding: 20px;
+  }
+}
+
+/* Asset placement from Figma mockups */
+.article-feature {
+  background: url("assets/aml.png") center / cover no-repeat;
+}
+
+.article-inline-image {
+  min-height: clamp(300px, 45vw, 464px);
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+}
+
+.introduction-image {
+  background-image: url("assets/introduction.png");
+}
+
+.further-grid .further-card:nth-child(1) .further-art {
+  background: url("assets/aml.png") center / cover no-repeat;
+}
+
+.further-grid .further-card:nth-child(2) .further-art {
+  background: url("assets/osd.png") center / cover no-repeat;
+}
+
+.further-grid .further-card:nth-child(3) .further-art {
+  background: url("assets/oec.png") center / cover no-repeat;
+}

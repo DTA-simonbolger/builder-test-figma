@@ -1,0 +1,424 @@
+.about-page {
+  background: #f5f5f7;
+}
+
+.about-hero {
+  position: relative;
+  padding: 76px 0 0;
+  overflow: hidden;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(233, 178, 109, 0.16), transparent 24%),
+    radial-gradient(circle at 20% 20%, rgba(64, 152, 249, 0.12), transparent 24%),
+    #000102;
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.24;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 86%);
+}
+
+.about-hero .container {
+  position: relative;
+  display: grid;
+  justify-items: center;
+}
+
+.about-hero h1 {
+  max-width: 1162px;
+  margin: 0;
+  font-size: clamp(42px, 5vw, 64px);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.about-hero .lead {
+  max-width: 1162px;
+  margin-top: 16px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.hero-checks,
+.global-checks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px 33px;
+  margin: 34px 0 64px;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-checks li,
+.global-checks li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--paper);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.hero-checks li::before,
+.global-checks li::before {
+  content: "";
+  width: 16px;
+  height: 9px;
+  border-left: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+  transform: rotate(-45deg) translateY(-2px);
+}
+
+.about-hero-media {
+  width: 100vw;
+  min-height: 438px;
+  border-radius: 20px 20px 0 0;
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)),
+    radial-gradient(260% 28% at 50% 98%, rgba(0, 0, 0, 0.9), transparent 100%),
+    linear-gradient(135deg, #213b5b, #171820 55%, #000102);
+}
+
+.about-section {
+  padding: 112px 0;
+  color: var(--ink);
+  background: #f5f5f7;
+}
+
+.about-section.white {
+  background: var(--paper);
+}
+
+.about-section.blue {
+  color: var(--paper);
+  background: #213b5b;
+}
+
+.center-heading {
+  max-width: 1288px;
+  margin: 0 auto 64px;
+  text-align: center;
+}
+
+.center-heading .eyebrow {
+  text-align: center;
+}
+
+.center-heading h2 {
+  margin-bottom: 16px;
+}
+
+.center-heading .lead {
+  color: currentColor;
+}
+
+.work-cards {
+  display: grid;
+  gap: 24px;
+  justify-content: center;
+}
+
+.work-card {
+  display: grid;
+  grid-template-columns: 380px minmax(0, 1fr);
+  max-width: 980px;
+  min-height: 356px;
+  background: var(--paper);
+}
+
+.work-art {
+  min-height: 356px;
+  background:
+    radial-gradient(circle at 36% 28%, rgba(233, 178, 109, 0.34), transparent 24%),
+    radial-gradient(circle at 70% 75%, rgba(64, 152, 249, 0.2), transparent 28%),
+    linear-gradient(135deg, #1f2633, #11141b);
+}
+
+.work-card:nth-child(2) .work-art {
+  background:
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 22px),
+    linear-gradient(135deg, #21222c, #171820);
+}
+
+.work-copy {
+  display: grid;
+  align-content: center;
+  gap: 20px;
+  padding: 48px 45px 48px 39px;
+}
+
+.work-copy h3 {
+  margin: 0;
+  color: #1d1d1f;
+  font-size: clamp(26px, 3vw, 32px);
+  font-weight: 500;
+  line-height: 1.12;
+}
+
+.work-copy p {
+  margin: 0;
+  color: #1d1d1f;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.driver-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.driver-card {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.driver-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: var(--gold);
+  background: rgba(248, 196, 131, 0.3);
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+}
+
+.driver-card h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.driver-card p {
+  margin: 0;
+  max-width: 411px;
+  line-height: 1.5;
+}
+
+.partner-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 23px;
+  margin-top: 80px;
+}
+
+.partner-logo {
+  min-width: 160px;
+  min-height: 94px;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  border: 1px solid #e7e8e8;
+  background: var(--paper);
+  color: var(--ink-2);
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.global-video {
+  position: relative;
+  min-height: 408px;
+  margin-top: 64px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(0deg, rgba(42, 26, 17, 0.2), rgba(42, 26, 17, 0.2)),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 58px),
+    linear-gradient(135deg, #171820, #2b2d35);
+}
+
+.global-video::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 70px rgba(255, 255, 255, 0.14);
+}
+
+.global-video::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform: translate(-35%, -50%);
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-left: 28px solid var(--paper);
+}
+
+.field-notes {
+  padding: 112px 0;
+  color: var(--ink);
+  background: #f5f5f7;
+}
+
+.field-layout {
+  display: grid;
+  grid-template-columns: 466px minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+
+.field-intro {
+  padding: 0 30px;
+}
+
+.note-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.note-card {
+  min-height: 670px;
+  display: grid;
+  align-content: end;
+  padding: 41px;
+  color: var(--paper);
+  background:
+    linear-gradient(180deg, transparent 48%, #21222c 100%),
+    radial-gradient(circle at 50% 26%, rgba(233, 178, 109, 0.25), transparent 24%),
+    linear-gradient(135deg, #213b5b, #171820);
+}
+
+.note-card:nth-child(2) {
+  background:
+    linear-gradient(180deg, transparent 48%, #21222c 100%),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0 1px, transparent 1px 22px),
+    #171820;
+}
+
+.note-tag {
+  width: max-content;
+  margin-bottom: 12px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: rgba(151, 71, 255, 0.5);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.note-card:nth-child(2) .note-tag {
+  background: rgba(18, 184, 255, 0.5);
+}
+
+.note-card h3,
+.note-card p {
+  margin: 0;
+}
+
+.note-card h3 {
+  margin-top: 12px;
+  font-size: 20px;
+}
+
+.note-card p {
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1000px) {
+  .work-card,
+  .field-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .driver-grid,
+  .note-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .work-art,
+  .note-card {
+    min-height: 320px;
+  }
+
+  .field-intro {
+    padding: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .about-hero,
+  .about-section,
+  .field-notes {
+    padding: 72px 0;
+  }
+
+  .about-hero-media {
+    min-height: 300px;
+  }
+
+  .hero-checks,
+  .global-checks {
+    justify-content: flex-start;
+  }
+
+  .work-copy {
+    padding: 32px 24px;
+  }
+
+  .partner-logo {
+    width: 100%;
+  }
+}
+
+/* Asset placement from Figma mockups */
+.about-hero-media {
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
+    url("assets/global-perspective.png") center / cover no-repeat;
+}
+
+.work-card:nth-child(1) .work-art {
+  background: url("assets/proven.png") center / cover no-repeat;
+}
+
+.work-card:nth-child(2) .work-art {
+  background: url("assets/complexity.png") center / cover no-repeat;
+}
+
+.global-video {
+  background: url("assets/global-perspective.png") center / cover no-repeat;
+}
+
+.global-video::before,
+.global-video::after {
+  display: none;
+}
+
+.note-card:nth-child(1),
+.note-card:nth-child(2) {
+  background:
+    linear-gradient(180deg, transparent 42%, rgba(33, 34, 44, 0.96) 100%),
+    url("assets/field.png") center / cover no-repeat;
+}
+
+.note-card:nth-child(2) {
+  background-position: right center;
+}

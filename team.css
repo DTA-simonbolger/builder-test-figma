@@ -1,0 +1,369 @@
+.team-page {
+  background: var(--ink);
+}
+
+.team-hero {
+  position: relative;
+  padding: clamp(96px, 12vw, 152px) 0 clamp(72px, 10vw, 116px);
+  overflow: hidden;
+}
+
+.team-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.42;
+  background:
+    linear-gradient(120deg, rgba(64, 152, 249, 0.16), transparent 38%),
+    radial-gradient(circle at 82% 16%, rgba(233, 178, 109, 0.18), transparent 34%),
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: auto, auto, 72px 72px, 72px 72px;
+}
+
+.team-hero .container {
+  position: relative;
+  max-width: 920px;
+  text-align: center;
+}
+
+.team-hero h1 {
+  margin: 0 auto 24px;
+  max-width: 840px;
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 300;
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.team-hero .lead {
+  max-width: 760px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.team-roster {
+  padding: clamp(72px, 10vw, 128px) 0 clamp(96px, 12vw, 156px);
+  background: var(--ink);
+}
+
+.section-kicker {
+  max-width: 720px;
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+
+.section-kicker .lead {
+  margin-top: 18px;
+  color: var(--muted);
+}
+
+.leader-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.member-card {
+  display: grid;
+  gap: 22px;
+  min-width: 0;
+}
+
+.member-photo {
+  position: relative;
+  min-height: 340px;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(150deg, rgba(233, 178, 109, 0.3), transparent 35%),
+    linear-gradient(315deg, rgba(64, 152, 249, 0.28), transparent 42%),
+    #252733;
+}
+
+.member-photo::before {
+  content: attr(data-initials);
+  position: absolute;
+  right: 28px;
+  bottom: 22px;
+  color: rgba(255, 255, 255, 0.13);
+  font-size: clamp(72px, 12vw, 144px);
+  font-weight: 600;
+  line-height: 0.8;
+  letter-spacing: 0;
+}
+
+.member-photo::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 46%;
+  background: linear-gradient(to top, rgba(23, 24, 32, 0.78), transparent);
+}
+
+.leader-card .member-photo {
+  min-height: clamp(420px, 40vw, 580px);
+}
+
+.member-copy {
+  display: grid;
+  gap: 12px;
+}
+
+.member-copy h2,
+.member-copy h3 {
+  margin: 0;
+  color: var(--paper);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.member-copy h2 {
+  font-size: clamp(28px, 3vw, 38px);
+}
+
+.member-copy h3 {
+  font-size: 24px;
+}
+
+.member-role {
+  margin: 0;
+  color: var(--gold);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.member-copy p:not(.member-role) {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.social-links a {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--paper);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.social-links a:hover,
+.social-links a:focus-visible {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.roster-divider {
+  margin: clamp(64px, 8vw, 104px) 0;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 996px;
+  margin-inline: auto;
+}
+
+.support-grid .member-card {
+  padding-bottom: 10px;
+}
+
+.support-grid .member-photo {
+  min-height: 280px;
+  border-radius: 16px;
+}
+
+.careers-section {
+  padding: clamp(82px, 11vw, 142px) 0;
+  color: var(--ink);
+  background: var(--paper-2);
+}
+
+.careers-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 430px) minmax(0, 1fr);
+  gap: clamp(42px, 8vw, 96px);
+  align-items: start;
+}
+
+.careers-section .eyebrow {
+  color: var(--blue);
+}
+
+.careers-section .section-title {
+  color: var(--ink);
+}
+
+.careers-section .lead {
+  margin-top: 18px;
+  color: var(--muted-dark);
+}
+
+.job-list {
+  display: grid;
+  gap: 18px;
+}
+
+.job-card {
+  display: grid;
+  gap: 22px;
+  padding: clamp(24px, 4vw, 36px);
+  border: 1px solid var(--line-light);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.job-topline {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.job-card h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.job-badge {
+  flex: none;
+  padding: 8px 12px;
+  border: 1px solid rgba(64, 152, 249, 0.25);
+  border-radius: 999px;
+  color: #256aaf;
+  background: rgba(64, 152, 249, 0.1);
+  font-size: 13px;
+  line-height: 1;
+}
+
+.job-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line-light);
+}
+
+.job-meta span {
+  display: grid;
+  gap: 4px;
+  color: var(--muted-dark);
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.job-meta strong {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.apply-button {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.apply-button:hover,
+.apply-button:focus-visible {
+  color: var(--paper);
+  background: var(--ink);
+}
+
+@media (max-width: 1080px) {
+  .support-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .careers-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .team-hero {
+    padding-top: 72px;
+  }
+
+  .team-hero .container {
+    text-align: left;
+  }
+
+  .leader-grid,
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leader-card .member-photo,
+  .support-grid .member-photo {
+    min-height: 320px;
+  }
+
+  .job-topline {
+    display: grid;
+  }
+
+  .job-badge {
+    justify-self: start;
+  }
+
+  .job-meta {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Asset placement from Figma mockups */
+.member-photo {
+  background-image: var(--member-image);
+  background-size: cover;
+  background-position: center;
+}
+
+.member-photo::before {
+  display: none;
+}
+
+.leader-grid .member-card:nth-child(1) .member-photo {
+  --member-image: url("assets/difab.png");
+  background-position: center 35%;
+}
+
+.leader-grid .member-card:nth-child(2) .member-photo {
+  --member-image: url("assets/gev.png");
+  background-position: center 32%;
+}
+
+.support-grid .member-card:nth-child(1) .member-photo {
+  --member-image: url("assets/bolg.png");
+}
+
+.support-grid .member-card:nth-child(2) .member-photo {
+  --member-image: url("assets/ann.png");
+}
+
+.support-grid .member-card:nth-child(3) .member-photo {
+  --member-image: url("assets/plow.png");
+}

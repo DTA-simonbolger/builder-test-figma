@@ -1,0 +1,458 @@
+.careers-page {
+  background: var(--ink);
+}
+
+.careers-hero {
+  position: relative;
+  padding: clamp(92px, 12vw, 152px) 0 clamp(72px, 10vw, 116px);
+  color: var(--paper);
+  background: var(--ink-2);
+  overflow: hidden;
+}
+
+.careers-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.48;
+  background:
+    linear-gradient(120deg, rgba(64, 152, 249, 0.16), transparent 42%),
+    radial-gradient(circle at 82% 18%, rgba(233, 178, 109, 0.18), transparent 34%),
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: auto, auto, 72px 72px, 72px 72px;
+}
+
+.careers-hero .container {
+  position: relative;
+  max-width: 1160px;
+  text-align: center;
+}
+
+.careers-hero h1 {
+  margin: 0 auto 22px;
+  max-width: 980px;
+  font-size: clamp(44px, 6vw, 72px);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.careers-hero .lead {
+  max-width: 980px;
+  margin: 0 auto;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.hero-collage {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr 1fr;
+  gap: 18px;
+  margin-top: clamp(48px, 7vw, 76px);
+  min-height: 360px;
+}
+
+.collage-tile {
+  min-height: 260px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(145deg, rgba(233, 178, 109, 0.28), transparent 38%),
+    linear-gradient(315deg, rgba(64, 152, 249, 0.3), transparent 42%),
+    #252733;
+}
+
+.collage-tile:nth-child(2) {
+  margin-top: 62px;
+}
+
+.collage-tile:nth-child(3) {
+  margin-top: 28px;
+}
+
+.culture-section {
+  padding: clamp(78px, 10vw, 124px) 0;
+  color: var(--paper);
+  background: #213b5b;
+}
+
+.center-heading {
+  max-width: 980px;
+  margin: 0 auto clamp(46px, 7vw, 76px);
+  text-align: center;
+}
+
+.center-heading .lead {
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.culture-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.culture-card {
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.culture-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+  border-radius: 999px;
+  color: var(--gold);
+  background: rgba(248, 196, 131, 0.2);
+  font-weight: 700;
+}
+
+.culture-card h3 {
+  margin: 0 0 10px;
+  color: var(--gold);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.culture-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.benefits-section {
+  padding: clamp(82px, 10vw, 126px) 0;
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.benefits-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 500px) minmax(0, 1fr);
+  gap: clamp(44px, 8vw, 96px);
+  align-items: center;
+}
+
+.benefits-layout .lead {
+  margin-top: 18px;
+  color: var(--muted);
+}
+
+.benefits-visual {
+  position: relative;
+  min-height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(233, 178, 109, 0.26), transparent 40%),
+    linear-gradient(315deg, rgba(64, 152, 249, 0.3), transparent 42%),
+    #252733;
+}
+
+.experience-pill {
+  position: absolute;
+  left: 28px;
+  top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 360px;
+  padding: 14px 22px 14px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(18px);
+}
+
+.experience-pill strong {
+  display: block;
+  color: var(--paper);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.experience-pill span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+}
+
+.life-section {
+  padding: clamp(78px, 10vw, 124px) 0;
+  color: var(--paper);
+  background: var(--ink-2);
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.testimonial-card {
+  padding: clamp(30px, 5vw, 48px);
+  border-radius: 12px;
+  background: linear-gradient(150deg, #09121d 16%, #3a333c 220%);
+}
+
+.testimonial-card blockquote {
+  margin: 0 0 36px;
+  color: var(--paper);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.person-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.person-avatar {
+  width: 68px;
+  height: 68px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(233, 178, 109, 0.42);
+  border-radius: 999px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.person-row strong,
+.person-row span {
+  display: block;
+}
+
+.person-row strong {
+  color: var(--paper);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.person-row span {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 16px;
+}
+
+.jobs-section {
+  padding: clamp(82px, 10vw, 126px) 0;
+  color: var(--ink);
+  background: var(--paper-2);
+}
+
+.jobs-section .center-heading .eyebrow {
+  color: var(--gold);
+}
+
+.jobs-section .center-heading .section-title {
+  color: var(--ink);
+}
+
+.jobs-section .center-heading .lead {
+  color: var(--muted-dark);
+}
+
+.job-list {
+  display: grid;
+  gap: 18px;
+}
+
+.career-job {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: center;
+  padding: clamp(24px, 4vw, 32px);
+  border: 1px solid var(--line-light);
+  background: var(--paper);
+}
+
+.career-job.featured {
+  border-color: var(--blue);
+}
+
+.job-heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.job-heading h3 {
+  margin: 0;
+  color: #191f33;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.job-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 12px;
+  border-radius: 52px;
+  color: #e96a2c;
+  background: rgba(233, 106, 44, 0.1);
+  font-size: 14px;
+}
+
+.job-badge.design {
+  color: var(--blue);
+  background: rgba(64, 152, 249, 0.1);
+}
+
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.apply-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  min-width: 164px;
+  padding: 0 22px;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  background: rgba(10, 101, 204, 0.1);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.apply-button:hover,
+.apply-button:focus-visible {
+  color: var(--paper);
+  background: var(--blue);
+}
+
+.open-cta {
+  position: relative;
+  padding: clamp(78px, 10vw, 112px) 0;
+  color: var(--paper);
+  background:
+    linear-gradient(0deg, rgba(2, 7, 25, 0.78), rgba(2, 7, 25, 0.78)),
+    linear-gradient(135deg, #213b5b, #171820);
+  overflow: hidden;
+}
+
+.open-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.36;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.open-cta .container {
+  position: relative;
+}
+
+.open-cta h2 {
+  margin: 0 0 18px;
+  max-width: 980px;
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 400;
+  line-height: 1.12;
+}
+
+.open-cta .lead {
+  max-width: 960px;
+  margin-bottom: 34px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+@media (max-width: 1080px) {
+  .hero-collage,
+  .culture-grid,
+  .benefits-layout,
+  .testimonial-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-collage .collage-tile:nth-child(3) {
+    grid-column: 1 / -1;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .careers-hero .container,
+  .center-heading {
+    text-align: left;
+  }
+
+  .hero-collage,
+  .culture-grid,
+  .benefits-layout,
+  .testimonial-grid,
+  .career-job {
+    grid-template-columns: 1fr;
+  }
+
+  .collage-tile,
+  .collage-tile:nth-child(2),
+  .collage-tile:nth-child(3) {
+    min-height: 220px;
+    margin-top: 0;
+  }
+
+  .benefits-visual {
+    min-height: 360px;
+  }
+
+  .experience-pill {
+    inset: auto 20px 20px;
+    max-width: none;
+  }
+
+  .apply-button {
+    justify-self: start;
+  }
+}
+
+/* Asset placement from Figma mockups */
+.hero-collage {
+  background: url("assets/career.png") center / cover no-repeat;
+}
+
+.collage-tile {
+  display: none;
+}
+
+.benefits-visual {
+  background: url("assets/benefits.png") center / cover no-repeat;
+}
+
+.testimonial-card:nth-child(1) .person-avatar {
+  background: url("assets/bolg2.png") center / cover no-repeat;
+  font-size: 0;
+}
+
+.testimonial-card:nth-child(2) .person-avatar {
+  background: url("assets/tij.png") center / cover no-repeat;
+  font-size: 0;
+}
+
+.open-cta {
+  background:
+    linear-gradient(0deg, rgba(2, 7, 25, 0.52), rgba(2, 7, 25, 0.52)),
+    url("assets/dont.png") center / cover no-repeat;
+}
