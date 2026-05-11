@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
+    "build:cf": "node scripts/build.mjs",
     "validate": "node scripts/validate.mjs"
   }
 }
