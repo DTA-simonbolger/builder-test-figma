@@ -400,6 +400,12 @@ textarea {
   background: var(--paper);
 }
 
+.faq {
+  height: 826px;
+  padding: 0;
+  overflow: hidden;
+}
+
 .intro .body-copy {
   display: grid;
   gap: 36px;
@@ -697,21 +703,22 @@ textarea {
 }
 
 .faq-grid {
+  height: 100%;
   display: grid;
   grid-template-columns: minmax(280px, 454px) minmax(0, 720px);
   gap: clamp(44px, 7vw, 100px);
-  align-items: stretch;
+  align-items: start;
 }
 
 .faq-media {
-  min-height: 826px;
-  margin-block: -112px;
+  height: 100%;
   background: url("assets/faq.png") center / cover no-repeat;
 }
 
 .faq-content {
   align-self: center;
-  padding: 88px 0;
+  min-height: 0;
+  padding: 72px 0;
 }
 
 .faq-intro {
@@ -725,6 +732,11 @@ textarea {
 .faq-list {
   display: grid;
   gap: 12px;
+  max-height: 438px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 6px;
+  scrollbar-width: thin;
 }
 
 .faq-item {
@@ -967,13 +979,31 @@ textarea {
     margin-top: 40px;
   }
 
+  .faq {
+    height: 1120px;
+    padding: 0;
+  }
+
+  .faq-grid {
+    height: 100%;
+    grid-template-rows: 420px minmax(0, 1fr);
+    align-content: start;
+    overflow: hidden;
+  }
+
   .faq-media {
-    min-height: 420px;
+    height: 420px;
     margin: 0;
   }
 
   .faq-content {
-    padding: 0;
+    min-height: 0;
+    padding: 48px 0 0;
+    overflow: hidden;
+  }
+
+  .faq-list {
+    max-height: 460px;
   }
 
   .team-strip {
@@ -1026,10 +1056,14 @@ textarea {
   .team,
   .clients,
   .cta,
-  .faq,
   .control-cta,
   .footer {
     padding: 72px 0;
+  }
+
+  .faq {
+    height: 1040px;
+    padding: 0;
   }
 
   .control-cta {
@@ -1074,7 +1108,23 @@ textarea {
   }
 
   .faq-media {
-    min-height: 360px;
+    height: 360px;
+  }
+
+  .faq-grid {
+    grid-template-rows: 360px minmax(0, 1fr);
+  }
+
+  .faq-content {
+    padding-top: 40px;
+  }
+
+  .faq-intro {
+    margin: 28px 0 34px;
+  }
+
+  .faq-list {
+    max-height: 420px;
   }
 
   .hero-media::after {

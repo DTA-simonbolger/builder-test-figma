@@ -26,6 +26,37 @@ function idsForHtml(html) {
   );
 }
 
+function resolveHtmlRoute(root, targetPart) {
+  const cleanTarget = targetPart || "/";
+  const basePath = cleanTarget.startsWith("/")
+    ? resolve(root, `.${cleanTarget}`)
+    : null;
+
+  if (cleanTarget === "/") {
+    return resolve(root, "index.html");
+  }
+
+  if (!basePath) {
+    return null;
+  }
+
+  const candidates = extname(basePath)
+    ? [basePath]
+    : [`${basePath}.html`, join(basePath, "index.html"), basePath];
+
+  return candidates.find((candidate) => existsSync(candidate)) || basePath;
+}
+
+function resolveReference(root, file, targetPart) {
+  if (!targetPart) return file;
+
+  if (targetPart.startsWith("/")) {
+    return resolveHtmlRoute(root, targetPart);
+  }
+
+  return resolve(dirname(file), targetPart);
+}
+
 function validateHtmlReferences(root, errors) {
   const htmlFiles = walk(root, (path) => extname(path) === ".html");
 
@@ -37,7 +68,7 @@ function validateHtmlReferences(root, errors) {
       if (externalRef.test(ref)) continue;
 
       const [targetPart, anchor] = ref.split("#", 2);
-      const targetPath = targetPart ? resolve(dirname(file), targetPart) : file;
+      const targetPath = resolveReference(root, file, targetPart);
 
       if (targetPart && !existsSync(targetPath)) {
         errors.push(`${file}: missing reference ${ref}`);
@@ -45,6 +76,11 @@ function validateHtmlReferences(root, errors) {
       }
 
       if (anchor) {
+        if (extname(targetPath) !== ".html") {
+          errors.push(`${file}: anchor reference ${ref} does not target an HTML file`);
+          continue;
+        }
+
         const targetHtml = readFileSync(targetPath, "utf8");
         if (!idsForHtml(targetHtml).has(anchor)) {
           errors.push(`${file}: missing anchor ${ref}`);

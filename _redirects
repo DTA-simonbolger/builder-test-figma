@@ -1,21 +1,7 @@
-# Clean URL rewrites for Cloudflare Pages.
-# Existing .html URLs remain valid.
+# Cloudflare Workers static assets handle clean URLs from matching .html files.
+# Keep only legacy flat detail-page redirects here; do not rewrite clean URLs
+# back to .html, because html_handling strips .html and can loop.
 
-/services /services.html 200
-/services/ /services.html 200
-/services/government-approvals /services-b.html 200
-/services/government-approvals/ /services-b.html 200
-/about /about.html 200
-/about/ /about.html 200
-/team /team.html 200
-/team/ /team.html 200
-/insights /insights.html 200
-/insights/ /insights.html 200
-/insights/aml-ctf-operating-model-uplift /insights-b.html 200
-/insights/aml-ctf-operating-model-uplift/ /insights-b.html 200
-/careers /careers.html 200
-/careers/ /careers.html 200
-/careers/governance-risk-advisor /careers-b.html 200
-/careers/governance-risk-advisor/ /careers-b.html 200
-/contact /contact.html 200
-/contact/ /contact.html 200
+/services-b /services/government-approvals 301
+/insights-b /insights/aml-ctf-operating-model-uplift 301
+/careers-b /careers/governance-risk-advisor 301

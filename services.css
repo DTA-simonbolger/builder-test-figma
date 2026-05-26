@@ -65,9 +65,7 @@
   height: 40px;
   border: 1px solid var(--ink);
   border-radius: 999px;
-  background:
-    radial-gradient(circle at 50% 32%, rgba(255, 255, 255, 0.72), transparent 16%),
-    linear-gradient(160deg, #293244, #11141b);
+  background: url("assets/john.png") center / cover no-repeat;
 }
 
 .testimonial blockquote {
@@ -129,15 +127,11 @@
 }
 
 .logo-row {
-  display: flex;
-  justify-content: center;
-  gap: clamp(24px, 7vw, 92px);
-  min-width: max-content;
-  color: rgba(255, 255, 255, 0.86);
-  font-family: "IBM Plex Mono", "Courier New", monospace;
-  font-size: 20px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  display: block;
+  width: min(100%, 1280px);
+  height: auto;
+  margin: 0 auto;
+  opacity: 0.92;
 }
 
 .service-block {

@@ -1,5 +1,5 @@
 import { copyFileSync, cpSync, existsSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
-import { basename, join, relative, resolve } from "node:path";
+import { basename, dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { validateSite } from "./validate.mjs";
 
@@ -39,11 +39,32 @@ const files = [
   "robots.txt"
 ];
 
+const cleanRoutes = [
+  {
+    source: "services-b.html",
+    output: join("services", "government-approvals.html")
+  },
+  {
+    source: "insights-b.html",
+    output: join("insights", "aml-ctf-operating-model-uplift.html")
+  },
+  {
+    source: "careers-b.html",
+    output: join("careers", "governance-risk-advisor.html")
+  }
+];
+
 rmSync(outDir, { recursive: true, force: true });
 mkdirSync(outDir, { recursive: true });
 
 for (const file of files) {
   copyFileSync(join(root, file), join(outDir, basename(file)));
+}
+
+for (const route of cleanRoutes) {
+  const target = join(outDir, route.output);
+  mkdirSync(dirname(target), { recursive: true });
+  copyFileSync(join(root, route.source), target);
 }
 
 cpSync(join(root, "assets"), join(outDir, "assets"), { recursive: true });
