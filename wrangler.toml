@@ -1,8 +1,0 @@
-name = "delta-tango-advisory-site"
-compatibility_date = "2026-05-11"
-pages_build_output_dir = "dist"
-
-[assets]
-directory = "./dist"
-not_found_handling = "404-page"
-html_handling = "auto-trailing-slash"
