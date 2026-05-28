@@ -420,8 +420,6 @@ textarea {
   height: clamp(380px, 54vw, 776px);
   margin-top: 60px;
   overflow: hidden;
-  border-top: 1px solid rgba(146, 140, 151, 0.4);
-  border-bottom: 1px solid rgba(146, 140, 151, 0.4);
   background:
     linear-gradient(120deg, rgba(64, 152, 249, 0.16), rgba(233, 178, 109, 0.1)),
     linear-gradient(135deg, #11161f, #22242e);
@@ -455,8 +453,8 @@ body.site-ready .hero-video,
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(23, 24, 32, 0.9) 0%, rgba(23, 24, 32, 0.18) 7%, transparent 16%),
-    linear-gradient(0deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.24) 6%, transparent 14%),
+    linear-gradient(180deg, transparent 0%, rgba(23, 24, 32, 0.18) 6%, transparent 15%),
+    linear-gradient(0deg, transparent 0%, rgba(255, 255, 255, 0.18) 5%, transparent 12%),
     linear-gradient(90deg, rgba(23, 24, 32, 0.58), transparent 12%, transparent 88%, rgba(23, 24, 32, 0.58));
 }
 
