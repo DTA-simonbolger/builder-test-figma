@@ -93,6 +93,10 @@ body.site-ready .page {
   body.site-ready .page {
     animation: none;
   }
+
+  .hero-video {
+    transition: none;
+  }
 }
 
 body::before {
@@ -415,6 +419,7 @@ textarea {
   width: 100vw;
   height: clamp(380px, 54vw, 776px);
   margin-top: 60px;
+  overflow: hidden;
   border-top: 1px solid rgba(146, 140, 151, 0.4);
   border-bottom: 1px solid rgba(146, 140, 151, 0.4);
   background:
@@ -422,41 +427,52 @@ textarea {
     linear-gradient(135deg, #11161f, #22242e);
 }
 
+.hero-video {
+  position: absolute;
+  inset: -6%;
+  width: 112%;
+  height: 112%;
+  object-fit: cover;
+  opacity: 0;
+  pointer-events: none;
+  filter: saturate(0.95) contrast(1.04);
+  transform: scale(1.04);
+  transition:
+    opacity 900ms ease,
+    transform 1400ms ease;
+}
+
+body.site-ready .hero-video,
+.hero-video.is-ready {
+  opacity: 1;
+  transform: scale(1);
+}
+
 .hero-media::before {
   content: "";
   position: absolute;
-  inset: 48px clamp(24px, 8vw, 140px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 72px 72px;
+    linear-gradient(180deg, rgba(23, 24, 32, 0.98) 0%, rgba(23, 24, 32, 0.34) 20%, transparent 42%),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.42) 15%, transparent 34%),
+    linear-gradient(90deg, rgba(23, 24, 32, 0.82), transparent 22%, transparent 78%, rgba(23, 24, 32, 0.82));
 }
 
 .hero-media::after {
   content: "";
   position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 128px;
-  height: 128px;
-  transform: translate(-50%, -50%);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.36);
-  box-shadow: 0 0 80px rgba(255, 255, 255, 0.18);
-}
-
-.play-button {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  width: 0;
-  height: 0;
-  transform: translate(-35%, -50%);
-  border-top: 22px solid transparent;
-  border-bottom: 22px solid transparent;
-  border-left: 34px solid #fff;
+  inset: clamp(22px, 4vw, 56px) clamp(18px, 6vw, 112px);
+  z-index: 2;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mix-blend-mode: screen;
+  opacity: 0.72;
 }
 
 .intro,
@@ -1193,31 +1209,9 @@ textarea {
     max-height: 420px;
   }
 
-  .hero-media::after {
-    width: 88px;
-    height: 88px;
-  }
-
-  .play-button {
-    border-top-width: 16px;
-    border-bottom-width: 16px;
-    border-left-width: 24px;
-  }
 }
 
 /* Asset placement from Figma mockups */
-.hero-media {
-  background:
-    linear-gradient(0deg, rgba(17, 19, 25, 0.08), rgba(17, 19, 25, 0.08)),
-    url("assets/plane.png") center / cover no-repeat;
-}
-
-.hero-media::before,
-.hero-media::after,
-.hero-media .play-button {
-  display: none;
-}
-
 .process-item:nth-child(1) .process-visual {
   background: url("assets/evidence.png") center / cover no-repeat;
 }
