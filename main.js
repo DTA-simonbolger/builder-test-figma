@@ -59,3 +59,42 @@ document.querySelectorAll(".faq-item").forEach((item) => {
     });
   });
 });
+
+document.querySelectorAll("[data-filter-group]").forEach((filterGroup) => {
+  const groupName = filterGroup.dataset.filterGroup;
+  const filterList = document.querySelector(`[data-filter-list="${groupName}"]`);
+  const emptyState = document.querySelector(`[data-filter-empty="${groupName}"]`);
+  const buttons = [...filterGroup.querySelectorAll("[data-filter]")];
+
+  if (!filterList || !buttons.length) return;
+
+  const items = [...filterList.querySelectorAll("[data-categories]")];
+
+  const applyFilter = (activeFilter) => {
+    let visibleCount = 0;
+
+    items.forEach((item) => {
+      const categories = item.dataset.categories.split(/\s+/);
+      const isVisible = activeFilter === "all" || categories.includes(activeFilter);
+
+      item.hidden = !isVisible;
+      if (isVisible) visibleCount += 1;
+    });
+
+    if (emptyState) emptyState.hidden = visibleCount !== 0;
+  };
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      buttons.forEach((other) => {
+        const isActive = other === button;
+        other.classList.toggle("active", isActive);
+        other.setAttribute("aria-pressed", String(isActive));
+      });
+
+      applyFilter(button.dataset.filter);
+    });
+  });
+
+  applyFilter(buttons.find((button) => button.classList.contains("active"))?.dataset.filter || "all");
+});

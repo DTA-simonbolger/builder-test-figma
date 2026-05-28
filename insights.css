@@ -51,6 +51,7 @@
 
 .featured-art,
 .article-art {
+  display: block;
   position: relative;
   overflow: hidden;
   border-radius: 20px;
@@ -122,6 +123,11 @@
   letter-spacing: 0;
 }
 
+.featured-copy h2 a:hover,
+.featured-copy h2 a:focus-visible {
+  color: var(--blue);
+}
+
 .article-meta {
   margin: 0 0 21px;
   color: var(--muted);
@@ -148,6 +154,7 @@
 }
 
 .filter-pill {
+  border: 0;
   display: inline-flex;
   align-items: center;
   min-height: 28px;
@@ -158,11 +165,18 @@
   font-size: 12px;
   font-weight: 500;
   line-height: 18px;
+  cursor: pointer;
 }
 
-.filter-pill.active {
+.filter-pill.active,
+.filter-pill[aria-pressed="true"] {
   color: var(--paper);
   background: var(--gold);
+}
+
+.filter-pill:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
 }
 
 .article-grid {
@@ -175,6 +189,10 @@
   display: grid;
   gap: 28px;
   min-width: 0;
+}
+
+.article-card[hidden] {
+  display: none;
 }
 
 .article-art {
@@ -206,6 +224,14 @@
 
 .article-card p:not(.article-meta) {
   color: var(--muted);
+}
+
+.filter-empty {
+  margin: 0;
+  padding: 36px;
+  border: 1px solid var(--line-light);
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.46);
 }
 
 .insights-cta {
@@ -279,25 +305,5 @@
 }
 
 .article-grid .article-card:nth-child(1) .article-art {
-  background: url("assets/introduction.png") center / cover no-repeat;
-}
-
-.article-grid .article-card:nth-child(2) .article-art {
-  background: url("assets/osd.png") center / cover no-repeat;
-}
-
-.article-grid .article-card:nth-child(3) .article-art {
-  background: url("assets/scalability.png") center / cover no-repeat;
-}
-
-.article-grid .article-card:nth-child(4) .article-art {
-  background: url("assets/introduction.png") center / cover no-repeat;
-}
-
-.article-grid .article-card:nth-child(5) .article-art {
-  background: url("assets/osd.png") center / cover no-repeat;
-}
-
-.article-grid .article-card:nth-child(6) .article-art {
-  background: url("assets/scalability.png") center / cover no-repeat;
+  background: url("assets/aml.png") center / cover no-repeat;
 }

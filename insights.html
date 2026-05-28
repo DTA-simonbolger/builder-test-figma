@@ -50,97 +50,40 @@
         <section class="insights-main" aria-labelledby="featured-title">
           <div class="container">
             <article class="featured-insight">
-              <div class="featured-art" role="img" aria-label="Featured insight image"></div>
+              <a class="featured-art" href="/insights/aml-ctf-operating-model-uplift" aria-label="Read AML/CTF Operating Model Uplift case study"></a>
               <div class="featured-copy">
                 <div class="badge-row">
                   <span class="badge">Case Study</span>
                 </div>
-                <h2 id="featured-title">AML/CTF Operating Model Uplift (Financial Services)</h2>
-                <p class="article-meta">Cristian Di Fabio • 4th March, 2025 • 4 min read</p>
+                <h2 id="featured-title"><a href="/insights/aml-ctf-operating-model-uplift">AML/CTF Operating Model Uplift (Financial Services)</a></h2>
+                <p class="article-meta">Cristian Di Fabio &bull; 4th March, 2025 &bull; 4 min read</p>
                 <p>Redesigned end-to-end processes, role clarity and training to address regulator findings, uplift controls, and reduce false positives.</p>
               </div>
             </article>
 
-            <div class="filter-row" aria-label="Insight categories">
-              <span class="filter-pill active">All</span>
-              <span class="filter-pill">Case Study</span>
-              <span class="filter-pill">Compliance</span>
-              <span class="filter-pill">Financial Services</span>
-              <span class="filter-pill">Operating Models</span>
+            <div class="filter-row" aria-label="Insight categories" data-filter-group="insights">
+              <button class="filter-pill active" type="button" data-filter="all" aria-pressed="true">All</button>
+              <button class="filter-pill" type="button" data-filter="case-study" aria-pressed="false">Case Study</button>
+              <button class="filter-pill" type="button" data-filter="compliance" aria-pressed="false">Compliance</button>
+              <button class="filter-pill" type="button" data-filter="financial-services" aria-pressed="false">Financial Services</button>
+              <button class="filter-pill" type="button" data-filter="operating-models" aria-pressed="false">Operating Models</button>
             </div>
 
-            <div class="article-grid">
-              <article class="article-card">
-                <div class="article-art" aria-hidden="true"></div>
-                <div class="badge-row">
-                  <span class="badge">Compliance</span>
-                </div>
-                <div>
-                  <h3><a href="/insights/aml-ctf-operating-model-uplift">Delivering Complex Programs in High Security Environments</a></h3>
-                  <p class="article-meta">Cristian DiFabio • March 2, 2026 • 5 min read</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis mi ac nibh placerat finibus phasellus urna leo, sodales condimentum</p>
-                </div>
-              </article>
-
-              <article class="article-card">
-                <div class="article-art" aria-hidden="true"></div>
-                <div class="badge-row">
-                  <span class="badge">Operating Models</span>
-                </div>
-                <div>
-                  <h3>From Strategy to Execution: Turning Plans into Measurable Outcomes</h3>
-                  <p class="article-meta">Christian Gevaux • December 3, 2025 • 4 min read</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis mi ac nibh placerat finibus phasellus urna leo, sodales condimentum</p>
-                </div>
-              </article>
-
-              <article class="article-card">
-                <div class="article-art" aria-hidden="true"></div>
-                <div class="badge-row">
-                  <span class="badge">Compliance</span>
-                </div>
-                <div>
-                  <h3>Operational Resilience in an Era of Rapid Change</h3>
-                  <p class="article-meta">Christian Gevaux • September 5, 2025 • 4 min read</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis mi ac nibh placerat finibus phasellus urna leo, sodales condimentum</p>
-                </div>
-              </article>
-
-              <article class="article-card">
-                <div class="article-art" aria-hidden="true"></div>
+            <div class="article-grid" data-filter-list="insights">
+              <article class="article-card" data-categories="case-study compliance financial-services operating-models">
+                <a class="article-art" href="/insights/aml-ctf-operating-model-uplift" aria-label="Read AML/CTF Operating Model Uplift case study"></a>
                 <div class="badge-row">
                   <span class="badge">Case Study</span>
-                </div>
-                <div>
-                  <h3>Assurance Lessons from Critical Delivery Reviews</h3>
-                  <p class="article-meta">Cristian DiFabio • March 2, 2026 • 5 min read</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis mi ac nibh placerat finibus phasellus urna leo, sodales condimentum</p>
-                </div>
-              </article>
-
-              <article class="article-card">
-                <div class="article-art" aria-hidden="true"></div>
-                <div class="badge-row">
                   <span class="badge">Financial Services</span>
                 </div>
                 <div>
-                  <h3>Designing Controls That Teams Can Actually Operate</h3>
-                  <p class="article-meta">Christian Gevaux • December 3, 2025 • 4 min read</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis mi ac nibh placerat finibus phasellus urna leo, sodales condimentum</p>
+                  <h3><a href="/insights/aml-ctf-operating-model-uplift">AML/CTF Operating Model Uplift (Financial Services)</a></h3>
+                  <p class="article-meta">Cristian Di Fabio &bull; 4th March, 2025 &bull; 4 min read</p>
+                  <p>Redesigned end-to-end processes, role clarity and training to address regulator findings, uplift controls, and reduce false positives.</p>
                 </div>
               </article>
 
-              <article class="article-card">
-                <div class="article-art" aria-hidden="true"></div>
-                <div class="badge-row">
-                  <span class="badge">Operating Models</span>
-                </div>
-                <div>
-                  <h3>Building Operating Models That Survive Contact with Reality</h3>
-                  <p class="article-meta">Christian Gevaux • September 5, 2025 • 4 min read</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis mi ac nibh placerat finibus phasellus urna leo, sodales condimentum</p>
-                </div>
-              </article>
+              <p class="filter-empty" data-filter-empty="insights" hidden>No articles match this filter yet.</p>
             </div>
           </div>
         </section>
