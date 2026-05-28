@@ -201,10 +201,12 @@ textarea {
 
 .brand-tagline {
   color: var(--paper);
+  font-family: "Avenir Next", Avenir, Montserrat, Inter, Aptos, "Segoe UI", Arial, sans-serif;
   font-size: 7px;
-  font-weight: 400;
-  line-height: 1.18;
-  letter-spacing: 0.02em;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.035em;
+  text-rendering: geometricPrecision;
 }
 
 .nav-links {
