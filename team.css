@@ -172,9 +172,9 @@
 
 .support-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
-  max-width: 996px;
+  max-width: none;
   margin-inline: auto;
 }
 
@@ -439,4 +439,8 @@
 
 .support-grid .member-card:nth-child(3) .member-photo {
   --member-image: url("assets/plow.png");
+}
+
+.support-grid .member-card:nth-child(4) .member-photo {
+  --member-image: url("assets/tijana.png");
 }
