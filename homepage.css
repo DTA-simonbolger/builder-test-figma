@@ -29,6 +29,72 @@ body {
   background: var(--ink);
 }
 
+body.site-loading {
+  overflow: hidden;
+}
+
+body.site-loading .page {
+  opacity: 0;
+  visibility: hidden;
+}
+
+body.site-loading::after {
+  content: "Delta Tango Advisory";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  color: var(--paper);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    var(--ink);
+  background-size: 44px 44px;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: uppercase;
+  animation: loading-grid 1400ms linear infinite;
+}
+
+body.site-ready .page {
+  animation: page-reveal 360ms ease both;
+}
+
+@keyframes loading-grid {
+  from {
+    background-position: 0 0, 0 0, 0 0;
+  }
+
+  to {
+    background-position: 44px 44px, 44px 44px, 0 0;
+  }
+}
+
+@keyframes page-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.site-loading::after,
+  body.site-ready .page {
+    animation: none;
+  }
+}
+
 body::before {
   content: "";
   position: fixed;
