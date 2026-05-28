@@ -39,7 +39,7 @@ body.site-loading .page {
 }
 
 body.site-loading::after {
-  content: "Delta Tango Advisory";
+  content: "";
   position: fixed;
   inset: 0;
   z-index: 9999;
