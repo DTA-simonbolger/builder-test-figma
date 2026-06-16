@@ -35,6 +35,14 @@ const buildPlainText = (fields) => fields
   .map(([label, value]) => `${label}: ${value}`)
   .join("\n");
 
+const getResponseText = async (response) => {
+  try {
+    return await response.text();
+  } catch {
+    return "";
+  }
+};
+
 export async function onRequest({ request, env }) {
   if (request.method !== "POST") {
     return json({ error: "Method not allowed." }, 405);
@@ -84,7 +92,15 @@ export async function onRequest({ request, env }) {
   const to = env.ENQUIRY_TO_EMAIL || DEFAULT_RECIPIENT;
 
   if (!apiKey || !from) {
-    return json({ error: "Email delivery is not configured." }, 500);
+    console.error("Enquiry email configuration is missing.", {
+      hasResendApiKey: Boolean(apiKey),
+      hasFromAddress: Boolean(from)
+    });
+
+    return json({
+      error: "Email delivery is not configured. Please email contact@deltatango.com.au directly.",
+      code: "EMAIL_CONFIG_MISSING"
+    }, 500);
   }
 
   const fullName = `${firstName} ${lastName}`.trim();
@@ -116,7 +132,18 @@ export async function onRequest({ request, env }) {
   });
 
   if (!response.ok) {
-    return json({ error: "The enquiry could not be sent. Please email contact@deltatango.com.au directly." }, 502);
+    const responseText = await getResponseText(response);
+
+    console.error("Resend rejected an enquiry email.", {
+      status: response.status,
+      statusText: response.statusText,
+      response: responseText
+    });
+
+    return json({
+      error: "The enquiry could not be sent. Please email contact@deltatango.com.au directly.",
+      code: "EMAIL_PROVIDER_REJECTED"
+    }, 502);
   }
 
   return json({ ok: true });
