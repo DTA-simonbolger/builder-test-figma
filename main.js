@@ -44,102 +44,162 @@ const waitForHeroVideo = () => new Promise((resolve) => {
   heroVideo.load();
 });
 
-Promise.all([waitForWindowLoad(), waitForHeroVideo()]).then(revealPage);
+const initDropdownToggle = () => {
+  const dropdownButtons = Array.from(document.querySelectorAll('.nav-dropdown-button'));
 
-window.addEventListener("pageshow", (event) => {
-  if (event.persisted) revealPage();
-});
-
-document.querySelectorAll(".faq-item").forEach((item) => {
-  item.addEventListener("toggle", () => {
-    if (!item.open) return;
-
-    document.querySelectorAll(".faq-item").forEach((other) => {
-      if (other !== item) other.removeAttribute("open");
+  function closeAllDropdowns() {
+    document.querySelectorAll('.nav-menu.open').forEach((menu) => {
+      menu.classList.remove('open');
+      const btn = menu.querySelector('.nav-dropdown-button');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
     });
-  });
-});
+  }
 
-document.querySelectorAll("[data-filter-group]").forEach((filterGroup) => {
-  const groupName = filterGroup.dataset.filterGroup;
-  const filterList = document.querySelector(`[data-filter-list="${groupName}"]`);
-  const emptyState = document.querySelector(`[data-filter-empty="${groupName}"]`);
-  const buttons = [...filterGroup.querySelectorAll("[data-filter]")];
+  if (!dropdownButtons.length) return;
 
-  if (!filterList || !buttons.length) return;
+  dropdownButtons.forEach((button) => {
+    const menu = button.closest('.nav-menu');
+    if (!menu) return;
 
-  const items = [...filterList.querySelectorAll("[data-categories]")];
+    button.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const isOpen = menu.classList.contains('open');
+      closeAllDropdowns();
 
-  const applyFilter = (activeFilter) => {
-    let visibleCount = 0;
-
-    items.forEach((item) => {
-      const categories = item.dataset.categories.split(/\s+/);
-      const isVisible = activeFilter === "all" || categories.includes(activeFilter);
-
-      item.hidden = !isVisible;
-      if (isVisible) visibleCount += 1;
-    });
-
-    if (emptyState) emptyState.hidden = visibleCount !== 0;
-  };
-
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      buttons.forEach((other) => {
-        const isActive = other === button;
-        other.classList.toggle("active", isActive);
-        other.setAttribute("aria-pressed", String(isActive));
-      });
-
-      applyFilter(button.dataset.filter);
-    });
-  });
-
-  applyFilter(buttons.find((button) => button.classList.contains("active"))?.dataset.filter || "all");
-});
-
-document.querySelectorAll(".contact-form").forEach((form) => {
-  const status = form.querySelector(".form-status");
-  const submitButton = form.querySelector('button[type="submit"]');
-
-  if (!status || !submitButton) return;
-
-  const setStatus = (message, type) => {
-    status.textContent = message;
-    status.dataset.status = type;
-  };
-
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    if (!form.reportValidity()) return;
-
-    const originalLabel = submitButton.textContent;
-    submitButton.disabled = true;
-    submitButton.textContent = "Sending...";
-    setStatus("", "");
-
-    try {
-      const response = await fetch(form.action, {
-        method: form.method || "POST",
-        body: new FormData(form),
-        headers: { accept: "application/json" }
-      });
-
-      const result = await response.json().catch(() => ({}));
-
-      if (!response.ok || result.error) {
-        throw new Error(result.error || "The enquiry could not be sent. Please email contact@deltatango.com.au directly.");
+      if (!isOpen) {
+        menu.classList.add('open');
+        button.setAttribute('aria-expanded', 'true');
       }
+    });
 
-      form.reset();
-      setStatus("Thanks. Your enquiry has been sent.", "success");
-    } catch (error) {
-      setStatus(error.message, "error");
-    } finally {
-      submitButton.disabled = false;
-      submitButton.textContent = originalLabel;
-    }
+    menu.querySelectorAll('.services-dropdown a').forEach((link) => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('open');
+        button.setAttribute('aria-expanded', 'false');
+      });
+    });
   });
-});
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-menu')) closeAllDropdowns();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' || e.key === 'Esc') closeAllDropdowns();
+  });
+};
+
+const initFaqAccordion = () => {
+  document.querySelectorAll(".faq-item").forEach((item) => {
+    item.addEventListener("toggle", () => {
+      if (!item.open) return;
+
+      document.querySelectorAll(".faq-item").forEach((other) => {
+        if (other !== item) other.removeAttribute("open");
+      });
+    });
+  });
+};
+
+const initFilters = () => {
+  document.querySelectorAll("[data-filter-group]").forEach((filterGroup) => {
+    const groupName = filterGroup.dataset.filterGroup;
+    const filterList = document.querySelector(`[data-filter-list="${groupName}"]`);
+    const emptyState = document.querySelector(`[data-filter-empty="${groupName}"]`);
+    const buttons = [...filterGroup.querySelectorAll("[data-filter]")];
+
+    if (!filterList || !buttons.length) return;
+
+    const items = [...filterList.querySelectorAll("[data-categories]")];
+
+    const applyFilter = (activeFilter) => {
+      let visibleCount = 0;
+
+      items.forEach((item) => {
+        const categories = item.dataset.categories.split(/\s+/);
+        const isVisible = activeFilter === "all" || categories.includes(activeFilter);
+
+        item.hidden = !isVisible;
+        if (isVisible) visibleCount += 1;
+      });
+
+      if (emptyState) emptyState.hidden = visibleCount !== 0;
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        buttons.forEach((other) => {
+          const isActive = other === button;
+          other.classList.toggle("active", isActive);
+          other.setAttribute("aria-pressed", String(isActive));
+        });
+
+        applyFilter(button.dataset.filter);
+      });
+    });
+
+    applyFilter(buttons.find((button) => button.classList.contains("active"))?.dataset.filter || "all");
+  });
+};
+
+const initContactForms = () => {
+  document.querySelectorAll(".contact-form").forEach((form) => {
+    const status = form.querySelector(".form-status");
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    if (!status || !submitButton) return;
+
+    const setStatus = (message, type) => {
+      status.textContent = message;
+      status.dataset.status = type;
+    };
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!form.reportValidity()) return;
+
+      const originalLabel = submitButton.textContent;
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+      setStatus("", "");
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method || "POST",
+          body: new FormData(form),
+          headers: { accept: "application/json" }
+        });
+
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok || result.error) {
+          throw new Error(result.error || "The enquiry could not be sent. Please email contact@deltatango.com.au directly.");
+        }
+
+        form.reset();
+        setStatus("Thanks. Your enquiry has been sent.", "success");
+      } catch (error) {
+        setStatus(error.message, "error");
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = originalLabel;
+      }
+    });
+  });
+};
+
+const initPage = () => {
+  initDropdownToggle();
+  initFaqAccordion();
+  initFilters();
+  initContactForms();
+
+  Promise.all([waitForWindowLoad(), waitForHeroVideo()]).then(revealPage);
+
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted) revealPage();
+  });
+};
+
+initPage();
