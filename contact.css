@@ -206,6 +206,7 @@
 
 .contact-image {
   min-height: 636px;
+  aspect-ratio: 612 / 636;
   background: url("assets/contact.png") center / cover no-repeat;
 }
 
@@ -264,7 +265,8 @@
   }
 
   .contact-image {
-    min-height: 420px;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
   }
 }
 
@@ -284,5 +286,10 @@
 
   .method-card {
     min-height: 240px;
+  }
+
+  .contact-image {
+    aspect-ratio: 4 / 3;
+    background-position: center top;
   }
 }

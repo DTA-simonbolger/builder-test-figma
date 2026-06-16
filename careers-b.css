@@ -162,6 +162,7 @@
   width: 100%;
   height: auto;
   margin-top: 8px;
+  object-fit: contain;
 }
 
 @media (max-width: 760px) {

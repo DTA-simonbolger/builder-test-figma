@@ -79,6 +79,7 @@
 .about-hero-media {
   width: 100%;
   min-height: 326px;
+  aspect-ratio: 16 / 5;
   background:
     linear-gradient(180deg, #000102 0%, rgba(0, 1, 2, 0.72) 18%, rgba(0, 1, 2, 0) 44%),
     url("assets/who-we.png") center bottom / cover no-repeat;
@@ -133,6 +134,7 @@
 
 .work-art {
   min-height: 356px;
+  aspect-ratio: 4 / 3;
   background: center / cover no-repeat;
 }
 
@@ -369,6 +371,7 @@
 .note-card {
   position: relative;
   min-height: clamp(440px, 45vw, 560px);
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   color: var(--paper);
   background: #171820;
@@ -456,7 +459,8 @@
   }
 
   .work-art {
-    min-height: 320px;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
   }
 
   .global-checks {
@@ -476,7 +480,9 @@
   }
 
   .about-hero-media {
-    min-height: 230px;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    background-position: center bottom;
   }
 
   .hero-checks,
@@ -491,6 +497,12 @@
   }
 
   .note-card {
-    min-height: 440px;
+    min-height: 0;
+    aspect-ratio: 3 / 4;
+  }
+
+  .global-image {
+    aspect-ratio: 4 / 3;
+    object-position: center;
   }
 }

@@ -85,6 +85,7 @@
 
 .services-hero-art {
   min-height: 632px;
+  aspect-ratio: 4 / 5;
   background:
     linear-gradient(180deg, rgba(23, 24, 32, 0) 54%, rgba(23, 24, 32, 0.9)),
     radial-gradient(circle at 50% 16%, rgba(255, 255, 255, 0.18), transparent 11%),
@@ -147,6 +148,7 @@
 
 .service-feature {
   min-height: 258px;
+  aspect-ratio: 5 / 1;
   margin-bottom: 47px;
   border: 1px solid rgba(23, 24, 32, 0.08);
   background:
@@ -349,7 +351,8 @@
   }
 
   .services-hero-art {
-    min-height: 420px;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
   }
 
   .service-items {
@@ -374,17 +377,19 @@
   }
 
   .services-hero-art {
-    min-height: 320px;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    background-position: center;
   }
 
   .logo-row {
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 4px;
+    width: 100%;
   }
 
   .service-feature {
-    min-height: 180px;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+    background-position: center;
   }
 
   .service-items,

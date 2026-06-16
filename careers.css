@@ -41,6 +41,7 @@
   width: min(1120px, 100%);
   height: auto;
   margin: 42px auto 0;
+  object-fit: contain;
 }
 
 .culture-section {
@@ -130,6 +131,7 @@
 .benefits-visual {
   position: relative;
   min-height: 616px;
+  aspect-ratio: 1 / 1.1;
   border-radius: 20px;
   overflow: visible;
   background: url("assets/benefits.png") center / cover no-repeat;
@@ -473,7 +475,9 @@
   }
 
   .benefits-visual {
-    min-height: 360px;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    background-position: center top;
   }
 
   .benefit-list {
@@ -491,6 +495,14 @@
   .experience-pill {
     inset: auto 20px 20px;
     max-width: none;
+  }
+
+  .open-cta::after {
+    width: 100%;
+    opacity: 0.22;
+    background:
+      linear-gradient(90deg, rgba(2, 7, 25, 0.95), rgba(2, 7, 25, 0.72)),
+      url("assets/dont.png") right center / auto 100% no-repeat;
   }
 
   .apply-button {

@@ -72,6 +72,7 @@
 .member-photo {
   position: relative;
   min-height: 340px;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -103,6 +104,7 @@
 
 .leader-card .member-photo {
   min-height: clamp(420px, 40vw, 580px);
+  aspect-ratio: 1200 / 931;
 }
 
 .member-copy {
@@ -184,6 +186,7 @@
 
 .support-grid .member-photo {
   min-height: 280px;
+  aspect-ratio: 293 / 151;
   border-radius: 16px;
 }
 
@@ -387,7 +390,15 @@
 
   .leader-card .member-photo,
   .support-grid .member-photo {
-    min-height: 320px;
+    min-height: 0;
+  }
+
+  .leader-card .member-photo {
+    aspect-ratio: 1200 / 931;
+  }
+
+  .support-grid .member-photo {
+    aspect-ratio: 293 / 151;
   }
 
   .job-card,
@@ -443,4 +454,21 @@
 
 .support-grid .member-card:nth-child(4) .member-photo {
   --member-image: url("assets/tijana.png");
+}
+
+@media (max-width: 760px) {
+  .leader-grid .member-card:nth-child(1) .member-photo,
+  .leader-grid .member-card:nth-child(2) .member-photo {
+    background-position: center top;
+  }
+
+  .support-grid .member-card:nth-child(1) .member-photo {
+    background-position: center 42%;
+  }
+
+  .support-grid .member-card:nth-child(2) .member-photo,
+  .support-grid .member-card:nth-child(3) .member-photo,
+  .support-grid .member-card:nth-child(4) .member-photo {
+    background-position: center top;
+  }
 }

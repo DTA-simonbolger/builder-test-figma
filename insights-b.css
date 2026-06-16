@@ -94,6 +94,7 @@
 
 .article-feature {
   min-height: clamp(300px, 42vw, 540px);
+  aspect-ratio: 16 / 7;
   margin-bottom: clamp(52px, 8vw, 84px);
   border-radius: 20px;
   background:
@@ -251,6 +252,7 @@
 
 .further-art {
   min-height: 200px;
+  aspect-ratio: 16 / 10;
   background:
     linear-gradient(145deg, rgba(233, 178, 109, 0.32), transparent 38%),
     linear-gradient(315deg, rgba(64, 152, 249, 0.26), transparent 42%),
@@ -313,6 +315,13 @@
   .article-callout {
     padding: 20px;
   }
+
+  .article-feature,
+  .article-inline-image,
+  .further-art {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
 }
 
 /* Asset placement from Figma mockups */
@@ -322,6 +331,7 @@
 
 .article-inline-image {
   min-height: clamp(300px, 45vw, 464px);
+  aspect-ratio: 16 / 9;
   border-radius: 8px;
   background-size: cover;
   background-position: center;
