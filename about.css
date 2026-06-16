@@ -126,15 +126,15 @@
 
 .work-card {
   display: grid;
-  grid-template-columns: minmax(300px, 380px) minmax(0, 600px);
+  grid-template-columns: minmax(0, 380px) minmax(0, 600px);
   width: min(980px, 100%);
   min-height: 356px;
   background: var(--paper);
 }
 
 .work-art {
+  min-width: 0;
   min-height: 356px;
-  aspect-ratio: 4 / 3;
   background: center / cover no-repeat;
 }
 
@@ -150,6 +150,7 @@
   display: grid;
   align-content: center;
   gap: 28px;
+  min-width: 0;
   padding: 48px 45px 48px 39px;
 }
 

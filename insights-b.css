@@ -32,12 +32,24 @@
   align-items: end;
 }
 
+.article-hero-grid > *,
+.article-layout > *,
+.article-content,
+.article-section,
+.article-sidebar,
+.sidebar-panel,
+.further-card,
+.further-copy {
+  min-width: 0;
+}
+
 .article-hero h1 {
   margin: 0 0 20px;
   font-size: clamp(38px, 5vw, 58px);
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: 0;
+  overflow-wrap: anywhere;
 }
 
 .article-hero .lead {
@@ -152,6 +164,7 @@
   color: #626475;
   font-size: 16px;
   line-height: 1.8;
+  overflow-wrap: anywhere;
 }
 
 .article-list {
@@ -162,6 +175,7 @@
   color: #626475;
   font-size: 16px;
   line-height: 1.75;
+  overflow-wrap: anywhere;
 }
 
 .article-callout {
@@ -219,6 +233,7 @@
   color: var(--muted-dark);
   font-size: 14px;
   line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 
 .sidebar-panel a:hover,
@@ -277,6 +292,7 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .further-copy p {
@@ -284,6 +300,7 @@
   color: var(--muted);
   font-size: 14px;
   line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 1080px) {
