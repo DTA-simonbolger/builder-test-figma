@@ -65,7 +65,9 @@
             </div>
 
             <div class="contact-form-panel">
-              <form class="contact-form" action="mailto:contact@deltatango.com.au" method="post" enctype="text/plain">
+              <form class="contact-form" action="/api/enquiry" method="post">
+                <input type="hidden" name="Source page" value="Contact page">
+                <input type="text" name="Website" autocomplete="off" tabindex="-1" aria-hidden="true" hidden>
                 <div class="form-row">
                   <div class="field">
                     <label for="first-name">First name</label>
@@ -89,9 +91,10 @@
                   <textarea id="message" name="Message" required></textarea>
                 </div>
                 <label class="consent">
-                  <input type="checkbox" name="Consent" required>
+                  <input type="checkbox" name="Consent" value="Agreed" required>
                   <span>You agree to our <a href="#">privacy policy</a>.</span>
                 </label>
+                <p class="form-status" role="status" aria-live="polite"></p>
                 <button class="button-primary" type="submit">Submit enquiry</button>
               </form>
             </div>

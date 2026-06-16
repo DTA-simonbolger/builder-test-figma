@@ -320,6 +320,27 @@
   cursor: pointer;
 }
 
+.contact-form .button-primary:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+.form-status {
+  min-height: 20px;
+  margin: -8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.form-status[data-status="success"] {
+  color: var(--gold-light);
+}
+
+.form-status[data-status="error"] {
+  color: #ffb4a8;
+}
+
 @media (max-width: 1000px) {
   .services-hero-grid,
   .service-layout,

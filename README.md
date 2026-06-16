@@ -15,6 +15,14 @@ Use these Cloudflare Pages build settings:
 
 The build is dependency-free. It copies only the production site files into `dist/`, excluding the preserved `*.figma-export.css` source dumps.
 
+Enquiry forms submit to the Cloudflare Pages Function at `/api/enquiry`, which sends the email via Resend. Configure these Cloudflare environment variables before relying on live submissions:
+
+- `RESEND_API_KEY` - Resend API key for sending email.
+- `ENQUIRY_FROM_EMAIL` - verified sender address, for example `Delta Tango Website <website@deltatango.com.au>`.
+- `ENQUIRY_TO_EMAIL` - optional recipient override. Defaults to `contact@deltatango.com.au`.
+
+This enquiry workflow requires a Cloudflare Pages deployment with Functions enabled. A pure static asset upload without Functions will not run `/api/enquiry`.
+
 If the project is configured as a Cloudflare Worker, `wrangler.toml` also declares `[assets] directory = "./dist"` so `wrangler deploy` can upload the static site without a Worker script.
 
 Useful local commands:

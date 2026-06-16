@@ -171,6 +171,27 @@
   background: rgba(233, 178, 109, 0.12);
 }
 
+.contact-form .button-primary:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+.form-status {
+  min-height: 20px;
+  margin: -8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.form-status[data-status="success"] {
+  color: var(--gold-light);
+}
+
+.form-status[data-status="error"] {
+  color: #ffb4a8;
+}
+
 .contact-methods {
   padding: 112px 0;
   background: #21222c;

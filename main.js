@@ -98,3 +98,48 @@ document.querySelectorAll("[data-filter-group]").forEach((filterGroup) => {
 
   applyFilter(buttons.find((button) => button.classList.contains("active"))?.dataset.filter || "all");
 });
+
+document.querySelectorAll(".contact-form").forEach((form) => {
+  const status = form.querySelector(".form-status");
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  if (!status || !submitButton) return;
+
+  const setStatus = (message, type) => {
+    status.textContent = message;
+    status.dataset.status = type;
+  };
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    const originalLabel = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
+    setStatus("", "");
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method || "POST",
+        body: new FormData(form),
+        headers: { accept: "application/json" }
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok || result.error) {
+        throw new Error(result.error || "The enquiry could not be sent. Please email contact@deltatango.com.au directly.");
+      }
+
+      form.reset();
+      setStatus("Thanks. Your enquiry has been sent.", "success");
+    } catch (error) {
+      setStatus(error.message, "error");
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = originalLabel;
+    }
+  });
+});
