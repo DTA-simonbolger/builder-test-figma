@@ -21,6 +21,9 @@
 html {
   scroll-behavior: smooth;
 }
+.team-strip-wrapper {
+  margin-top: 56px; /* matches spacing used in process/expertise sections */
+}
 
 body {
   margin: 0;
