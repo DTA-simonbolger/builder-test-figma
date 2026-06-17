@@ -369,3 +369,110 @@
 .further-grid .further-card:nth-child(3) .further-art {
   background: url("assets/oec.png") center / cover no-repeat;
 }
+
+/* ================================
+   ARTICLE PAGE — MOBILE OVERRIDES
+   ================================ */
+
+@media (max-width: 768px) {
+
+  /* Global container spacing fix */
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Prevent horizontal overflow from long content */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* HERO SECTION STACKING */
+  .article-hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .author-card {
+    width: 100%;
+  }
+
+  /* MAIN ARTICLE LAYOUT (CRITICAL FIX) */
+  .article-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-content {
+    width: 100%;
+  }
+
+  .article-sidebar {
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  .sidebar-panel {
+    width: 100%;
+  }
+
+  /* TYPOGRAPHY FIXES */
+  h1 {
+    font-size: clamp(1.6rem, 4vw, 2.3rem);
+    line-height: 1.2;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  h2, h3 {
+    line-height: 1.25;
+  }
+
+  p {
+    font-size: 0.98rem;
+  }
+
+  /* LIST SPACING FIX */
+  .article-list {
+    padding-left: 18px;
+  }
+
+  .article-list li {
+    margin-bottom: 8px;
+  }
+
+  /* CALLOUT BOX */
+  .article-callout {
+    padding: 16px;
+    font-size: 0.95rem;
+  }
+
+  /* IMAGE PLACEHOLDERS */
+  .article-feature,
+  .article-inline-image {
+    height: 180px;
+  }
+
+  /* TAGS WRAP BETTER ON MOBILE */
+  .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .article-tag {
+    font-size: 0.85rem;
+  }
+
+  /* NAV SAFETY (prevents header overflow issues) */
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+  }
+
+}
